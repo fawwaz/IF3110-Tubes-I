@@ -28,8 +28,8 @@ Released   : 20130921
 <body>
 <div id="header" class="container">
 	<div id="logo">
-		<h1><a href="#">Spotless</a></h1>
-		<span>Template design by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>.</span>
+		<h1><a href="#">Logo</a></h1>
+		<span>Cuma sekedar<a href='http://localhost/tubes/index.php?registrasi&action="daftar"' rel="nofollow">Sekedar slogan</a>.</span>
 	</div>
 </div>
 <div id="menu-wrapper">

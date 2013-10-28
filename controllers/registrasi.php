@@ -33,7 +33,13 @@ class Registrasi_Controller
     }
 
     public function daftar(array $getVars){
-        echo "Ada aja";
-        echo $_POST["lupa"];
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+        $nama_lengkap = $_POST["nama_lengkap"];
+        $email = $_POST["email"];
+
+        foreach ($_POST as $key => $value) {
+            echo $value;
+        }
     }
 }

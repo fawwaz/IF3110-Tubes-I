@@ -7,7 +7,9 @@ $email = $_POST["email"];
 mysql_connect("127.0.0.1", "root", "")or die("cannot connect");
 mysql_select_db("waserda")or die("cannot select DB");
 
-$sql = "INSERT INTO data_user (username,password,nama_lengkap,email) VALUES ('$username','$password','$nama_lengkap','$email')";
-
+//$sql = "INSERT INTO data_user (username,password,nama_lengkap,email) VALUES ('$username','$password','$nama_lengkap','$email')";
+foreach ($_POST as $key => $value) {
+	echo $value;
+}
 
 ?>

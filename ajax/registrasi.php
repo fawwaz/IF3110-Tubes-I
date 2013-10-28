@@ -12,10 +12,10 @@ mysql_select_db("waserda")or die("cannot select DB");
 // while ( $row = mysql_fetch_array($result)) {
 // 	print_r($row);
 // }
-$username = $_POST["username"];
+
 // $sql = 'SELECT username FROM data_user WHERE `username` LIKE `dummy`';
 // ini gak tau kenapa masih error
-$sql = "SELECT username FROM data_user WHERE username LIKE `d%`";
+$sql = "SELECT username FROM data_user WHERE username LIKE `u%`";
 $result = mysql_query($sql);
 if (false === $result) {
     echo mysql_error();

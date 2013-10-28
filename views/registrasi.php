@@ -1,12 +1,17 @@
 <?php include 'header.php';?>
 	
 <div id="page" class="container">
-	<form action="demo_form.asp">
+	
+
+	<div id="warning">
+	</div>
+	<!-- <form action="actions/registrasi-submit.php" method="POST"> -->
+	<form action='http://localhost/tubes/index.php?registrasi&action="daftar"' method="POST">
 	  Username :<br> <input type="text" name="username" onchange="validator();"><br>
-	  Password : <br> <input type="text" name="password"><br>
-	  Confirm Password : <br> <input type="text" name="confirm_pass"> <br>
-	  Nama Lengkap : <br> <input type="text" name="nama_lengkap"><br>
-	  E-Mail : <br> <input type="text" name="email"><br>
+	  Password : <br> <input type="text" name="password" onchange="validator();"><br>
+	  Confirm Password : <br> <input type="text" name="confirm_pass" onchange="validator();"> <br>
+	  Nama Lengkap : <br> <input type="text" name="nama_lengkap" onchange="validator();"><br>
+	  E-Mail : <br> <input type="text" name="email" onchange="validator();"><br>
 	  <!-- Nama Lengkap : <br> <input type="text" name="nama_lengkap"><br>
 	  Nomor Handphone :<br> <input type="text" name="no_handphone"><br>
 	  Alamat :<br> <input type="text" name="alamat"><br>
