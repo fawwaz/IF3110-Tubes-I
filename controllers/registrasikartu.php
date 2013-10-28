@@ -2,7 +2,7 @@
 /**
  * This file handles the retrieval and serving of news articles
  */
-class Registrasi_Controller
+class Registrasikartu_Controller
 {
     /**
      * This template variable will hold the 'view' portion of our MVC for this 
@@ -23,23 +23,26 @@ class Registrasi_Controller
 
         // print "We are in registrasi!";
         
-        $registrasi_model = New Registrasi_Model;
+        // $registrasi_model = New Registrasikartu_Model;
 
         // $result = $registrasi_model->check_registered($getVars['uname']);
         // print_r( count($result[0]));
 
-        $view = new View_Model("registrasi");
+        $view = new View_Model("registrasikartu");
         
     }
 
     public function daftar(array $getVars){
-        $username = $_POST["username"];
-        $password = $_POST["password"];
-        $nama_lengkap = $_POST["nama_lengkap"];
-        $email = $_POST["email"];
 
         foreach ($_POST as $key => $value) {
             echo $value;
         }
+
+        $model = new Registrasikartu_model;
+
+        $sementara = $_POST["expired_date_month"] . " " . $_POST["expired_date_year"];
+
+        $model->register($_POST["no_kartu"],$_POST["nama_pemegang_kartu"], $sementara);
+        
     }
 }
