@@ -19,7 +19,21 @@ class Profil_Controller
     {
         //this is a test , and we will be removing it later
         print "We are in profil pages!";
+
+        $view = new View_Model("profil");
         
+
+    }
+
+    public function updatedata(array $getVars) {
+
+        foreach ($_POST as $key => $value) {
+            echo $value;
+        }
+
+        $model = new Profil_model;
+
+        $model->sikat($_POST["alamat"], $_POST["provinsi"], $_POST["kota"], $_POST["kodepos"], $_POST["email"]);
 
     }
 }
