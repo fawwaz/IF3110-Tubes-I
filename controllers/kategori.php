@@ -2,7 +2,7 @@
 /**
  * This file handles the retrieval and serving of news articles
  */
-class Detail_Controller
+class Kategori_Controller
 {
     /**
      * This template variable will hold the 'view' portion of our MVC for this 
@@ -22,11 +22,11 @@ class Detail_Controller
         //this is a test , and we will be removing it later
         print "We are in detail barang!";
         
-		$model = new Detail_Model;
+		$model = new Kategori_Model;
 		
-		$brg = $getVars['namabarang'];
+		$kat = $getVars['namakategori'];
 
-		$hasil = $model->get_result($brg);
+		$hasil = $model->get_result($kat);
 		
 		for ($i=0; $i < count($hasil) ; $i++) { 
             // print_r($hasil[$i]);
@@ -35,7 +35,6 @@ class Detail_Controller
             echo "Nama :" . $hasil[$i]['nama'];
 			echo "Harga :" . $hasil[$i]['harga'];
 			echo "Stok :" . $hasil[$i]['stok'];
-			echo "Kategori :" . $hasil[$i]['kategori'];
 			echo "<img src=\"". $hasil[$i]['img_dir'] . "\">";
         }
 

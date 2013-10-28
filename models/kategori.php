@@ -1,31 +1,19 @@
 <?php
-/**
- * The News Model does the back-end heavy lifting for the News Controller
- */
-class Result_Model
+
+class Kategori_Model
 {
-    /**
-     * Array of articles. Array keys are titles, array values are corresponding
-     * articles.
-     */
-    private $db;
+	
+	private $db;
 
     public function __construct(){
         $this->db = new MysqlImproved_Driver;
     }
-
-    /**
-     * Fetches article based on supplied name
-     * 
-     * @param string $articleName
-     * 
-     * @return array $article
-     */
-    public function get_result()
-    {
-        $this->db->connect();
-
-        
+	
+	public function get_result($namakategori){
+		$this->db->connect();
+		//$value = "'%" . $namabarang . "%'";
+		$value = "'%".$namakategori . "%'";
+        echo $value;
         //prepare query
         $this->db->prepare
         (
@@ -34,6 +22,8 @@ class Result_Model
                 *
             FROM
                 `data_barang`
+            WHERE
+            	`kategori` LIKE " . $value . "
             ;
             "
         );
@@ -47,7 +37,6 @@ class Result_Model
             $rows[] = $hasil;
         }
 
-        return $rows;        
-
-    }
-} 
+        return $rows;    
+	}
+}

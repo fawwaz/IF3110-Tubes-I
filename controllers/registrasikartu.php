@@ -2,7 +2,7 @@
 /**
  * This file handles the retrieval and serving of news articles
  */
-class Registrasi_Controller
+class Registrasikartu_Controller
 {
     /**
      * This template variable will hold the 'view' portion of our MVC for this 
@@ -23,12 +23,12 @@ class Registrasi_Controller
 
         // print "We are in registrasi!";
         
-        $registrasi_model = New Registrasi_Model;
+        $registrasi_model = New Registrasikartu_Model;
 
         // $result = $registrasi_model->check_registered($getVars['uname']);
         // print_r( count($result[0]));
 
-        $view = new View_Model("registrasi");
+        $view = new View_Model("registrasikartu");
         
     }
 
