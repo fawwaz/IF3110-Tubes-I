@@ -8,6 +8,8 @@ class Registrasi_Controller
      * This template variable will hold the 'view' portion of our MVC for this 
      * controller
      */
+
+
     public $template = 'news';
     
     /**
@@ -15,6 +17,8 @@ class Registrasi_Controller
      * 
      * @param array $getVars the GET variables posted to index.php
      */
+
+
     public function main(array $getVars)
     {
 
@@ -38,8 +42,12 @@ class Registrasi_Controller
         $nama_lengkap = $_POST["nama_lengkap"];
         $email = $_POST["email"];
 
-        foreach ($_POST as $key => $value) {
-            echo $value;
-        }
+        $registrasi_model = new Registrasi_Model;
+        $registrasi_model->registrasi($username,$password,$nama_lengkap,$email);
+        header("Location : http://localhost/tubes/index.php");
+    }
+
+    public function login(array $getVars){
+
     }
 }

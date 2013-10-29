@@ -51,4 +51,24 @@ class Registrasi_Model
         return $rows;        
 
     }
+
+    public function registrasi($username,$password,$nama_lengkap,$email){
+        $this->db->connect();
+
+        //prepare query
+        $this->db->prepare
+        (
+            "
+            INSERT INTO
+                data_user
+                (username,password,nama_lengkap,email)
+            VALUES
+                ('$username','$password','$nama_lengkap','$email')
+            ;
+            "
+        );
+
+        //execute query
+        $this->db->query();        
+    }
 } 

@@ -15,7 +15,10 @@ mysql_select_db("waserda")or die("cannot select DB");
 
 // $sql = 'SELECT username FROM data_user WHERE `username` LIKE `dummy`';
 // ini gak tau kenapa masih error
-$sql = "SELECT username FROM data_user WHERE username LIKE `u%`";
+$post = "'".$_GET["username"]."%'";
+
+$sql = "SELECT username FROM data_user WHERE username LIKE ".$post."";
+
 $result = mysql_query($sql);
 if (false === $result) {
     echo mysql_error();

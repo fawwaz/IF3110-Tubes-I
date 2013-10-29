@@ -7,11 +7,11 @@
 	</div>
 	<!-- <form action="actions/registrasi-submit.php" method="POST"> -->
 	<form action='http://localhost/tubes/index.php?registrasi&action="daftar"' method="POST">
-	  Username :<br> <input type="text" name="username" onchange="validator();"><br>
-	  Password : <br> <input type="text" name="password" onchange="validator();"><br>
-	  Confirm Password : <br> <input type="text" name="confirm_pass" onchange="validator();"> <br>
-	  Nama Lengkap : <br> <input type="text" name="nama_lengkap" onchange="validator();"><br>
-	  E-Mail : <br> <input type="text" name="email" onchange="validator();"><br>
+	  Username :<br> <input type="text" name="username" onchange="Validasi_Komplit();"><br>
+	  Password : <br> <input type="text" name="password" onchange="Validasi_Komplit();"><br>
+	  Confirm Password : <br> <input type="text" name="confirm_pass" onchange="Validasi_Komplit();"> <br>
+	  Nama Lengkap : <br> <input type="text" name="nama_lengkap" onchange="Validasi_Komplit();"><br>
+	  E-Mail : <br> <input type="text" name="email" onchange="Validasi_Komplit();"><br>
 	  <!-- Nama Lengkap : <br> <input type="text" name="nama_lengkap"><br>
 	  Nomor Handphone :<br> <input type="text" name="no_handphone"><br>
 	  Alamat :<br> <input type="text" name="alamat"><br>
