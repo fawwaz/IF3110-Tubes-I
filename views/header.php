@@ -42,7 +42,7 @@ Released   : 20130921
 			<li><a href="#" accesskey="3" title="">Barang</a></li>
 			<li><a href="#login_form" accesskey="4" title="" >Login</a></li>
 			<li><a href="#" accesskey="5" title="">Register</a></li>
-			<li><form action="http://localhost/tubes/index.php?result"><input type="text" name="keyword"/><input type="submit" value="search"></form></li>
+			<li><form action='http://localhost/waserda/index.php?result' method="POST" ><input type="text" name="keyword"/><input type="submit" value="search"></form></li>
 		</ul>
 	</div>
 </div>

@@ -35,7 +35,7 @@ class Login_Controller
         $password = $_POST["password"];
         $status=$this->model->cek_login($username,$password);
         // print_r($status);
-        header('Location: http://localhost/tubes/index.php?registrasi');
+        header('Location: http://localhost/waserda/index.php?registrasi');
 
     }
 }

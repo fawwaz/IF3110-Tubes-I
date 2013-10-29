@@ -44,7 +44,7 @@ class Registrasi_Controller
 
         $registrasi_model = new Registrasi_Model;
         $registrasi_model->registrasi($username,$password,$nama_lengkap,$email);
-        header("Location : http://localhost/tubes/index.php");
+        header("Location : http://localhost/waserda/index.php");
     }
 
     public function login(array $getVars){
