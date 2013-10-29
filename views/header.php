@@ -27,7 +27,7 @@ Released   : 20130921
 <link rel="stylesheet" type="text/css" href="assets/css/modal.css" />
 <script src="assets/js/login.js"></script>
 </head>
-<body>
+<body onload="LoadMenu();">
 <div id="header" class="container">
 	<div id="logo">
 		<h1><a href="#">Logo</a></h1>
@@ -38,10 +38,14 @@ Released   : 20130921
 	<div id="menu" class="container">
 		<ul>
 			<li><a href="#" accesskey="1" title="">Homepage</a></li>
-			<li><a href="#" accesskey="2" title="">Our Clients</a></li>
-			<li><a href="#" accesskey="3" title="">Barang</a></li>
-			<li><a href="#login_form" accesskey="4" title="" >Login</a></li>
-			<li><a href="#" accesskey="5" title="">Register</a></li>
+			<li><a href="#" accesskey="2" title="">Shopping Bag</a></li>
+			<li><a href="#" accesskey="3" title="">Category</a></li>
+			<li>
+				<ul id="menus">
+				</ul>
+			</li>
+			<li><a href="#login_form" accesskey="4" title="" id="link_login">Login</a></li>
+			<li><a href="http://localhost/tubes/index.php?registrasi" accesskey="5" title="">Register</a></li>
 			<li><form action="http://localhost/tubes/index.php?result"><input type="text" name="keyword"/><input type="submit" value="search"></form></li>
 		</ul>
 	</div>
@@ -49,9 +53,11 @@ Released   : 20130921
 
 <!-- popup form #1 -->
 <a href="#x" class="overlay" id="login_form"></a>
-<div class="popup">
+<div class="popup" id="isi_popup">
     <h2>Selamat datang!</h2>
     <p>Masukan username dan password dibawah</p>
+    <div id="login_warning">
+    </div>
     <div>
         <label for="login">Login</label>
         <input type="text" id="login" value="" name="username"/>

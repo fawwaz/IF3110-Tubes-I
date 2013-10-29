@@ -25,6 +25,12 @@ if (false === $result) {
 }else{
 	$i=0;
 	$row=mysql_fetch_array($result);
+	if (mysql_num_rows($result) == 0) {
+		$row["status"] = "failed";
+	}else{
+		$row["status"] = "success";
+	}
+	
 	echo json_encode($row);
 }
 ?>
