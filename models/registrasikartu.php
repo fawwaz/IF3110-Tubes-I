@@ -2,7 +2,7 @@
 /**
  * The News Model does the back-end heavy lifting for the News Controller
  */
-class Result_Model
+class Registrasikartu_Model
 {
     /**
      * Array of articles. Array keys are titles, array values are corresponding
@@ -21,19 +21,18 @@ class Result_Model
      * 
      * @return array $article
      */
-    public function get_result()
+    public function register($no_kartu, $nama_pemegang_kartu, $sementara)
     {
         $this->db->connect();
 
-        
         //prepare query
         $this->db->prepare
         (
             "
-            SELECT
-                *
-            FROM
-                `data_barang`
+            INSERT INTO
+                data_kartu_kredit (no_kartu, nama_pemegang_kartu, expired_date)
+            VALUES
+               ('$no_kartu', '$nama_pemegang_kartu', '$sementara')
             ;
             "
         );
@@ -41,13 +40,6 @@ class Result_Model
         //execute query
         $this->db->query();
 
-        
-        // $rows[] = $this->db->fetch('array');
-        while($hasil = $this->db->fetch('array')){
-            $rows[] = $hasil;
-        }
-
-        return $rows;        
 
     }
 } 

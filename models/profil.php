@@ -2,7 +2,7 @@
 /**
  * The News Model does the back-end heavy lifting for the News Controller
  */
-class Result_Model
+class Profil_Model
 {
     /**
      * Array of articles. Array keys are titles, array values are corresponding
@@ -21,19 +21,17 @@ class Result_Model
      * 
      * @return array $article
      */
-    public function get_result()
+    public function updatedata($username, $no_hp, $alamat, $provinsi, $kota, $kodepos, $email)
     {
         $this->db->connect();
 
-        
         //prepare query
         $this->db->prepare
         (
             "
-            SELECT
-                *
-            FROM
-                `data_barang`
+            UPDATE data_user
+                SET no_handphone='$no_hp', alamat='$alamat', provinsi='$provinsi', kabupaten_kota='$kota', kodepos='$kodepos', email='$email'
+            WHERE username='$username'
             ;
             "
         );
@@ -41,13 +39,6 @@ class Result_Model
         //execute query
         $this->db->query();
 
-        
-        // $rows[] = $this->db->fetch('array');
-        while($hasil = $this->db->fetch('array')){
-            $rows[] = $hasil;
-        }
-
-        return $rows;        
 
     }
 } 

@@ -6,13 +6,11 @@
 	<div id="warning">
 	</div>
 	<!-- <form action="actions/registrasi-submit.php" method="POST"> -->
-	<form action='http://localhost/tubes/index.php?registrasi&action="daftar"' method="POST">
-	  Username :<br> <input type="text" name="username" onchange="Validasi_Komplit();"><br>
-	  Password : <br> <input type="text" name="password" onchange="Validasi_Komplit();"><br>
-	  Confirm Password : <br> <input type="text" name="confirm_pass" onchange="Validasi_Komplit();"> <br>
-	  Nama Lengkap : <br> <input type="text" name="nama_lengkap" onchange="Validasi_Komplit();"><br>
-	  E-Mail : <br> <input type="text" name="email" onchange="Validasi_Komplit();"><br>
-
+	<form action='http://localhost/waserda/index.php?registrasikartu&action="daftar"' method="POST">
+	  nomor kartu : <br> <input type="text" name="no_kartu" onchange="validator();"><br>
+	  nama pemegang kartu : <br> <input type="text" name="nama_pemegang_kartu" onchange="validator();"><br>
+	  expired date (MM / YY) : <br> <input type="text" name="expired_date_month" onchange="validator();"> /
+	  <input type="text" name="expired_date_year" onchange="validator();"> <br>
 	  <!-- Nama Lengkap : <br> <input type="text" name="nama_lengkap"><br>
 	  Nomor Handphone :<br> <input type="text" name="no_handphone"><br>
 	  Alamat :<br> <input type="text" name="alamat"><br>

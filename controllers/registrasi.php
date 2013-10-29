@@ -33,7 +33,7 @@ class Registrasi_Controller
         // print_r( count($result[0]));
 
         $view = new View_Model("registrasi");
-
+        
     }
 
     public function daftar(array $getVars){
