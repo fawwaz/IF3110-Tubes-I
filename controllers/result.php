@@ -8,7 +8,7 @@ class Result_Controller
      * This template variable will hold the 'view' portion of our MVC for this 
      * controller
      */
-    public $template = 'news';
+    public $template = 'result';
 
     
     

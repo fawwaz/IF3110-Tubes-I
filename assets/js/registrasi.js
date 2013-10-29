@@ -48,7 +48,6 @@ function IsUserExist(callback,username){
 	}
 	ajaxRequest.open("GET", "ajax/registrasi.php?username="+username+"", true);
 	ajaxRequest.send(null); 
-	return ajaxRequest.responseText;
 }
 
 

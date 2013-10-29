@@ -25,7 +25,7 @@ Released   : 20130921
 
 <!-- <link rel="stylesheet" type="text/css" href="assets/css/tinybox.css"> -->
 <link rel="stylesheet" type="text/css" href="assets/css/modal.css" />
-
+<script src="assets/js/login.js"></script>
 </head>
 <body>
 <div id="header" class="container">
@@ -42,7 +42,7 @@ Released   : 20130921
 			<li><a href="#" accesskey="3" title="">Barang</a></li>
 			<li><a href="#login_form" accesskey="4" title="" >Login</a></li>
 			<li><a href="#" accesskey="5" title="">Register</a></li>
-			<li><input type="text" name="search"/><input type="submit" value="search"></li>
+			<li><form action="http://localhost/tubes/index.php?result"><input type="text" name="keyword"/><input type="submit" value="search"></form></li>
 		</ul>
 	</div>
 </div>
@@ -52,7 +52,6 @@ Released   : 20130921
 <div class="popup">
     <h2>Selamat datang!</h2>
     <p>Masukan username dan password dibawah</p>
-    <form method="POST" action='http://localhost/tubes/index.php?login&action="cek_login"'>
     <div>
         <label for="login">Login</label>
         <input type="text" id="login" value="" name="username"/>
@@ -61,7 +60,6 @@ Released   : 20130921
         <label for="password">Password</label>
         <input type="password" id="password" value="" name="password"/>
     </div>
-    <input type="submit" value="Log In" />
-    </form>
+    <input type="button" value="Log In" onclick="Do_Login();"/>
     <a class="close" href="#close"></a>
 </div>
