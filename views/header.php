@@ -17,12 +17,14 @@ Released   : 20130921
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
-<!-- <link href="<?php echo "".SERVER_ROOT."/views/";?>default.css" rel="stylesheet" type="text/css" media="all" /> -->
 <link href="assets/css/default.css" rel="stylesheet" type="text/css" media="all" />
 
 <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
 
 <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+<!-- <link rel="stylesheet" type="text/css" href="assets/css/tinybox.css"> -->
+<link rel="stylesheet" type="text/css" href="assets/css/modal.css" />
 
 </head>
 <body>
@@ -37,10 +39,29 @@ Released   : 20130921
 		<ul>
 			<li><a href="#" accesskey="1" title="">Homepage</a></li>
 			<li><a href="#" accesskey="2" title="">Our Clients</a></li>
-			<li><a href="#" accesskey="3" title="">About Us</a></li>
-			<li><a href="#" accesskey="4" title="">Careers</a></li>
-			<li><a href="#" accesskey="5" title="">Contact Us</a></li>
+			<li><a href="#" accesskey="3" title="">Barang</a></li>
+			<li><a href="#login_form" accesskey="4" title="" >Login</a></li>
+			<li><a href="#" accesskey="5" title="">Register</a></li>
+			<li><input type="text" name="search"/><input type="submit" value="search"></li>
 		</ul>
 	</div>
 </div>
-</head>
+
+<!-- popup form #1 -->
+<a href="#x" class="overlay" id="login_form"></a>
+<div class="popup">
+    <h2>Selamat datang!</h2>
+    <p>Masukan username dan password dibawah</p>
+    <form method="POST" action='http://localhost/tubes/index.php?login&action="cek_login"'>
+    <div>
+        <label for="login">Login</label>
+        <input type="text" id="login" value="" name="username"/>
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" value="" name="password"/>
+    </div>
+    <input type="submit" value="Log In" />
+    </form>
+    <a class="close" href="#close"></a>
+</div>

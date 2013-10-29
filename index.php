@@ -2,7 +2,7 @@
 /**
  * Define document paths
  */
-define('SERVER_ROOT' , 'C:/Program Files/xampp/htdocs/waserda');
+define('SERVER_ROOT' , 'C:/xampp/htdocs/tubes');
 define('SITE_ROOT' , 'http://localhost');
 
 /**
