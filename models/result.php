@@ -21,7 +21,7 @@ class Result_Model
      * 
      * @return array $article
      */
-    public function get_result()
+    public function search($keyword,$start = "0", $end = "5")
     {
         $this->db->connect();
 
@@ -30,10 +30,7 @@ class Result_Model
         $this->db->prepare
         (
             "
-            SELECT
-                *
-            FROM
-                `data_barang`
+            select * from `data_barang` where nama like '%$keyword%'
             ;
             "
         );
@@ -43,11 +40,32 @@ class Result_Model
 
         
         // $rows[] = $this->db->fetch('array');
+        $rows=array();
         while($hasil = $this->db->fetch('array')){
             $rows[] = $hasil;
         }
-
+        echo "halo";
         return $rows;        
 
+    }
+
+    public function hitung($keyword) {
+        $this->db->connect();
+
+        
+        //prepare query
+        $this->db->prepare
+        (
+            "
+            SELECT COUNT(*) as jml FROM `data_barang` WHERE nama LIKE '%$keyword%';
+            "
+        );
+
+        //execute query
+        $this->db->query();
+
+
+        $hsl=$this->db->fetch("array");
+        return $hsl;
     }
 } 

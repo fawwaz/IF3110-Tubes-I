@@ -8,7 +8,6 @@ class Result_Controller
      * This template variable will hold the 'view' portion of our MVC for this 
      * controller
      */
-    public $template = 'result';
 
     
     
@@ -26,15 +25,23 @@ class Result_Controller
         //echo $_POST["id"];
         $model = new Result_Model;
 
-        $hasil = $model->get_result();
+        isset($_GET['page_num']) ? $get = $_GET['page_num'] : $get=0;
+        $start = $get*5;
+        $end = $start+5;
 
-        for ($i=0; $i < count($hasil) ; $i++) { 
-            // print_r($hasil[$i]);
-            echo "<br/><br/><br/>";
-            echo "id :" . $hasil[$i]['id_barang'];
-            echo "nama :" . $hasil[$i]['nama'];
-            echo "<img src=\"". $hasil[$i]['foto'] . "\">";
-        }
-        
+        //buat hasil count
+        $jumlah = $model->hitung($_POST['keyword']);
+        $hasil = $model->search($_POST['keyword'],$start,$end);
+
+        //generate jumlah halaman
+
+        $c = 5;
+        print_r($hasil);
+        $jum_hal = ceil($jumlah["jml"]/$c);
+
+        $view = new View_Model('result');
+        $view->assign('hasil',$hasil);
+        $view->assign('jum_hal_diview',$jum_hal);
     }
+
 }
